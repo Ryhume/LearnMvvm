@@ -12,5 +12,7 @@ import android.databinding.ObservableField;
 public class TextViewData {
 
     public final ObservableField<String> text = new ObservableField<>();
+    public final ObservableField<Integer> textColor = new ObservableField<>();
+    public final ObservableField<Integer> backGroundColor = new ObservableField<>();
 
 }

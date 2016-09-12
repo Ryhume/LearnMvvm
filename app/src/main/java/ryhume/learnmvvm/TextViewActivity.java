@@ -10,16 +10,28 @@ import ryhume.learnmvvm.model.TextViewData;
 
 public class TextViewActivity extends AppCompatActivity {
     ActivityTextViewBinding binding;
+    TextViewData textViewData = new TextViewData();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_text_view);
     }
 
-    protected void change(View view){
+    protected void changeTextData(View view){
 
-        TextViewData textViewData = new TextViewData();
         textViewData.text.set("这是个测试");
+        binding.setData(textViewData);
+    }
+
+    protected void changeTextColor(View view){
+
+        textViewData.textColor.set(getResources().getColor(R.color.colorAccent));
+        binding.setData(textViewData);
+    }
+
+    protected void changeBackgroundColor(View view){
+
+        textViewData.backGroundColor.set(getResources().getColor(R.color.colorPrimary));
         binding.setData(textViewData);
     }
 
